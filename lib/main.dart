@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'screens/login_screen.dart';
 import 'screens/registration_screen.dart';
+import 'screens/exam_mode_selection_screen.dart';
+import 'screens/exam_interface.dart';
 // TODO: Import these when created
-// import 'screens/exam_interface.dart';
 // import 'screens/payment_screen.dart';
+import 'screens/exam_instructions_screen.dart';
+// import 'screens/exam_results_screen.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -58,8 +59,10 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => LoginScreen(),
         '/register': (context) => RegistrationScreen(),
-        /// TODO: Uncomment when screens are created
-        // '/exam': (context) => ExamInterface(),
+        '/exam-mode': (context) => ExamModeSelectionScreen(),
+        '/exam': (context) => ExamInterface(),
+        '/exam-instructions': (context) => ExamInstructionsScreen(),
+        // '/exam-results': (context) => ExamResultsScreen(),
         // '/payment': (context) => PaymentScreen(),
       },
       // Handle unknown routes

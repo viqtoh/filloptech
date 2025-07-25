@@ -3,10 +3,10 @@ import '../widgets/app_widgets.dart'; // Import our reusable widgets
 
 class LoginScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  LoginScreenState createState() => LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class LoginScreenState extends State<LoginScreen> {
   final _passcodeController = TextEditingController();
   bool _isLoading = false;
 
@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 // Top bar
                 AppTopBar(
                   title: 'FILLOP TECH (HANDS-ON CBT)',
-                  showBackButton: true,
+                  showBackButton: false,
                 ),
                 
                 // Logo in top right
@@ -277,9 +277,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
     // Validate passcode
     if (_validatePasscode(_passcodeController.text.trim())) {
-      // Navigate to exam interface (when created)
-      // Navigator.pushReplacementNamed(context, '/exam');
-      _showMessage('Login successful! (Exam interface not yet created)');
+      // Navigate to exam mode selection
+      Navigator.pushReplacementNamed(context, '/exam-mode');
     } else {
       _showMessage('Invalid passcode. Please try again.');
     }
